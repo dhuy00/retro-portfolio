@@ -38,7 +38,7 @@ const Navigation = () => {
   return (
     <div
       className="bg-white fixed top-0 left-0 right-0 px-4 py-2 flex border-2 border-black
-    justify-between items-center font-space-mono font-bold pr-32 shadow-hard mr-2 box-border"
+    justify-between items-center font-space-mono font-bold pr-32 shadow-hard mr-2 box-border z-[999]"
     >
       <NameIcon />
       <div className="gap-8 flex items-center ">
