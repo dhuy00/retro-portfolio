@@ -4,6 +4,8 @@ import CustomCursor from './components/CustomCursor'
 import Hero from './pages/Hero'
 import About from './pages/About'
 import Background from './components/background/Background'
+import Skills from './pages/Skills'
+import SectionBreak from './components/common/SectionBreak'
 
 function App() {
 
@@ -14,6 +16,8 @@ function App() {
       <Navigation/>
       <Hero/>
       <About/>
+      <SectionBreak/>
+      {/* <Skills/> */}
     </div>
   )
 }

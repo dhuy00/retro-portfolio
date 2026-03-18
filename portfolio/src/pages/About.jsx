@@ -44,82 +44,32 @@ const About = () => {
       </div>
 
       {/* Story */}
-      <div className="mt-6 flex flex-col">
-        <div className="flex items-center gap-2 text-xl font-bold border-4 py-2.5 px-4 bg-yellow-300">
-          <FaBook />
-          <span>MY STORY</span>
-        </div>
-      </div>
-      <div className="border-4 border-t-0 p-6 flex gap-6">
-        <div className="flex flex-col w-1/2 gap-6">
-          <div className="bg-blue-400 py-7 px-6 border-4">
+      <div className="mt-10 flex gap-6">
+        <div className="flex flex-col w-1/2 gap-6 h-[280px]">
+          <div className="bg-blue-400 py-7 px-6 border-4 h-full">
             <h2 className="text-2xl font-bold mb-4">THE JOURNEY</h2>
             <p>
               My coding journey started in 2018 when I built my first website.
               What began as a hobby quickly turned into a passion, and
               eventually, a career. <br /> <br /> I've had the privilege of
               working with startups, agencies, and enterprises, building
-              everything from e-commerce platforms to SaaS applications. <br />{" "}
-              <br /> Today, I specialize in React, TypeScript, and Node.js, but
-              I'm always exploring new technologies to add to my toolkit.
+              everything from e-commerce platforms to SaaS applications
             </p>
           </div>
-          <div className="bg-pink-400 py-7 px-6 border-4">
-            <h2 className="font-bold text-lg">QUICK FACTS</h2>
-            <ul className="flex flex-col gap-2 mt-2">
-              <li className="flex items-center gap-3">
-                <RiTriangleFill className="-rotate-30 text-[8px]" />
-                <span>Based in HCM City, VietNam</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <RiTriangleFill className="-rotate-30 text-[8px]" />
-                <span>1 year of experience</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <RiTriangleFill className="-rotate-30 text-[8px]" />
-                <span>Open to remote oppoturnities</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <RiTriangleFill className="-rotate-30 text-[8px]" />
-                <span>Fluent in English</span>
-              </li>
-            </ul>
-          </div>
         </div>
-        <div className="flex flex-col w-1/2 gap-6">
-          <div className="bg-green-400 py-7 px-6 border-4">
+        <div className="flex flex-col w-1/2 gap-6 h-[280px]">
+          <div className="bg-green-400 py-7 px-6 border-4 h-full">
             <h2 className="text-2xl font-bold mb-4">WHAT I DO</h2>
             <div className="flex flex-col gap-3">
               <div className="bg-white flex flex-col gap-1 px-3 py-3 border-3">
-                <span>Frontend development</span>
+                <span className="font-bold">Frontend development</span>
                 <span>React, Typescript, Tailwind</span>
               </div>
               <div className="bg-white flex flex-col gap-1 px-3 py-3 border-3">
-                <span>Backend development</span>
+                <span className="font-bold">Backend development</span>
                 <span>React, Typescript, Tailwind</span>
               </div>
             </div>
-          </div>
-          <div className="bg-yellow-300 py-7 px-6 border-4">
-            <div className="flex items-center gap-2">
-              <LuCoffee className="text-2xl"/>
-              <h2 className="font-bold text-lg">CURRENT STATUS</h2>
-            </div>
-
-            <ul className="flex flex-col gap-2 mt-2">
-              <li className="flex items-center gap-3 bg-white border-2 py-1.5 px-2">
-                <MdOutlineWork className="text-xl" />
-                <span>Available for freelance work</span>
-              </li>
-              <li className="flex items-center gap-3 bg-white border-2 py-1.5 px-2">
-                <MdOutlineLibraryBooks className="text-xl" />
-                <span>Learning: Rust & WebAssembly</span>
-              </li>
-              <li className="flex items-center gap-3 bg-white border-2 py-1.5 px-2">
-                <BsHammer className="text-xl" />
-                <span>A new Saas product</span>
-              </li>
-            </ul>
           </div>
         </div>
       </div>
