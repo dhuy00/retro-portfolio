@@ -17,7 +17,7 @@ function App() {
       <Hero/>
       <About/>
       <SectionBreak/>
-      {/* <Skills/> */}
+      <Skills/>
     </div>
   )
 }
