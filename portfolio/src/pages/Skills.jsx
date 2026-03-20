@@ -12,55 +12,56 @@ import { IoCode } from "react-icons/io5";
 import { BsHddStack } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { HiOutlineBolt } from "react-icons/hi2";
+import { FaArrowRight } from "react-icons/fa6";
 
-const SkillCard = ({ id, icon: Icon, title, count, bg, active, handleSwitchTab }) => {
+const SkillOption = () => {
   return (
-    <div className={`flex flex-col gap-2 py-6 w-[300px] pl-6 border-4 ${bg} hover:translate-x-2
-    hover:translate-y-2 transition hover:shadow-hard ${active == id ? "translate-x-2 translate-y-2 shadow-hard" : ''}`}
-    onClick={() => handleSwitchTab(id)}>
-      <Icon className="text-[3rem]" />
-      <span className="text-[1.6rem] font-semibold tracking-wide">{title}</span>
-      <span className="text-sm">{count}</span>
-    </div>
+    <>
+      <div
+        className="px-4 py-5 bg-white border-[4px] flex flex-col gap-2 shadow-md
+          hover:translate-x-1 hover:translate-y-1 transition"
+      >
+        <div className="flex items-center justify-between">
+          <span className="font-semibold text-lg tracking-wide">FRONTEND</span>
+          <FaArrowRight />
+        </div>
+        <span className="text-[12px] font-semibold text-gray-700">
+          4 technologies
+        </span>
+      </div>
+    </>
   );
 };
 
 const Skills = () => {
-  const [activeSkill, setActiveSkill] = useState(null)
-  const skills = [
-    {
-      id: 1,
-      icon: IoCode,
-      title: "FRONTEND",
-      count: "6 technologies",
-      bg: "bg-blue-400",
-    },
-    {
-      id: 2,
-      icon: BsHddStack,
-      title: "BACKEND",
-      count: "6 technologies",
-      bg: "bg-pink-400",
-    },
-    {
-      id: 3,
-      icon: FiDatabase,
-      title: "DATABASE",
-      count: "6 technologies",
-      bg: "bg-yellow-300",
-    },
-    {
-      id: 4,
-      icon: HiOutlineBolt,
-      title: "TOOLS",
-      count: "6 technologies",
-      bg: "bg-green-400",
-    },
-  ];
+  const [activeSkill, setActiveSkill] = useState(null);
 
   const handleSwitch = (id) => {
-    setActiveSkill(id)
-  }
+    setActiveSkill(id);
+  };
+
+  const skillCategory = [
+    {
+      id: 1, 
+      name: "frontend",
+      technologies: 4,
+    },
+    {
+      id: 2, 
+      name: "backend",
+      technologies: 4,
+    },
+    {
+      id: 1, 
+      name: "database",
+      technologies: 4,
+    },
+    {
+      id: 1, 
+      name: "devops",
+      technologies: 4,
+    },
+  ]
 
   return (
     <div className=" px-28 mt-12 flex flex-col font-space-mono relative">
@@ -77,20 +78,21 @@ const Skills = () => {
         <FiCpu className="text-[1.9rem]" />
         <span>CORE TECHNOLOGIES</span>
       </div>
-      <div className="mt-4 flex justify-between">
-        {skills.map((item, index) => (
-          <SkillCard key={index} {...item} handleSwitchTab={handleSwitch} active={activeSkill}/>
-        ))}
-      </div>
-      <div>
-        <div className="flex flex-col gap-2 justify-between">
-          <span className="border-2 bg-blue-400 px-4 py-2">LIBRARY</span>
-          <span>REACT</span>
-          <span className="h-2 w-full bg-black"></span>
-          <span>UI component framework</span>
-          <div className="flex gap-4">
-            <span className="w-4 h-4 bg-green-400"></span>
-            <span>ACTIVE</span>
+      <div className="w-full h-[300px] ">
+        <div className="w-2/6 h-full ">
+          <div
+            className="bg-black text-white flex items-center gap-2 font-mono font-semibold text-[14px]
+          py-2.5 px-4"
+          >
+            <FaTerminal />
+            <span>SELECT_CATEGORY</span>
+          </div>
+          <div className="mt-3 flex flex-col gap-5">
+            {
+              skillCategory.map((item) => (
+                <SkillOption/>
+              ))
+            }
           </div>
         </div>
       </div>
