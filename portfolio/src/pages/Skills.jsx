@@ -100,9 +100,8 @@ const Skills = () => {
         <span>TECH_STACK.json</span>
       </div>
       {/* Core Tech */}
-      <div className="flex items-center gap-3 font-semibold text-[1.9rem] mt-4">
-        <FiCpu className="text-[1.9rem]" />
-        <span>CORE TECHNOLOGIES</span>
+      <div className="flex items-center gap-3 text-lg font-medium border-l-4 my-4 py-3 px-6">
+        <span>A comprehensive overview of my <span className="bg-blue-400 px-2 py-1 border-3">development toolkit</span></span>
       </div>
       <div className="w-full h-[495px] flex gap-10 ">
         <div className="w-2/6 h-full ">
