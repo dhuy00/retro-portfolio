@@ -13,6 +13,7 @@ import { BsHddStack } from "react-icons/bs";
 import { FiDatabase } from "react-icons/fi";
 import { HiOutlineBolt } from "react-icons/hi2";
 import { FaArrowRight } from "react-icons/fa6";
+import Certification from "../components/skills/Certification";
 
 const SkillOption = ({ item, isActive, handleClick }) => {
   return (
@@ -161,6 +162,7 @@ const Skills = () => {
           </div>
         </div>
       </div>
+      <Certification/>
     </div>
   );
 };
