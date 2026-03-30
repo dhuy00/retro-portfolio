@@ -6,6 +6,7 @@ import About from './pages/About'
 import Background from './components/background/Background'
 import Skills from './pages/Skills'
 import SectionBreak from './components/common/SectionBreak'
+import Projects from './pages/Projects'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
       <About/>
       <SectionBreak/>
       <Skills/>
+      <Projects/>
     </div>
   )
 }
