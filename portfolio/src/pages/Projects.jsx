@@ -67,11 +67,11 @@ const Projects = () => {
         <PiMedal className="text-[2.2rem]" />
         <span className="font-semibold">FEATURED WORK</span>
       </div>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap gap-12 mt-4">
         {
-          projectList.map((item) => {
+          projectList.map((item) => (
             <ProjectItem/>
-          })
+          ))
         }
       </div>
     </div>
