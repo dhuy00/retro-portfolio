@@ -3,6 +3,9 @@ import AnimatedGrid from "../components/hero/AnimatedGrid";
 import ScanlineEffect from "../components/hero/ScanlineEffect";
 import { GrTopCorner } from "react-icons/gr";
 import { MdOutlineFileDownload } from "react-icons/md";
+import ArcadeMachine from "../components/hero/ArcadeMachine";
+import Particles from "../components/hero/Particles";
+import GlitchText from "../components/common/GlitchText";
 
 const Hero = () => {
   const description =
@@ -25,27 +28,38 @@ const Hero = () => {
         >
           HI! IT'S DUC HUY
         </span>
-        <div className="font-press-start text-[2.5rem] mt-8">
+        <GlitchText className="font-press-start text-[2.5rem] mt-8">
           I'M A <span className="text-primary">FULLSTACK</span>
-        </div>
-        <span className="font-press-start text-[4rem] text-accent mt-4">
+        </GlitchText>
+        <GlitchText className="font-press-start text-[4rem] text-accent mt-4">
           DEVELOPER
-        </span>
+        </GlitchText>
         <p className="max-w-[450px] text-muted-foreground text-[16px] leading-relaxed mt-8">
           {description}
         </p>
         <div className="flex gap-4 mt-8">
-          <button className="text-primary-foreground bg-primary border-2 border-primary 
+          <button
+            className="text-primary-foreground bg-primary border-2 border-primary 
           shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] 
-          transition px-8 py-2 hover:scale-105">
+          transition px-8 py-2 hover:scale-105"
+          >
             HIRE ME
           </button>
-          <button className="flex items-center text-accent gap-1 border-2 border-accent px-8 py-2
-          hover:bg-accent/10 transition hover:scale-105">
-            <MdOutlineFileDownload className="text-2xl"/>
+          <button
+            className="flex items-center text-accent gap-1 border-2 border-accent px-8 py-2
+          hover:bg-accent/10 transition hover:scale-105"
+          >
+            <MdOutlineFileDownload className="text-2xl" />
             <span>RESUME</span>
           </button>
         </div>
+      </div>
+
+      <Particles />
+
+      {/* Arcade Machine */}
+      <div className="absolute right-32 top-[22%] w-[550px]">
+        <ArcadeMachine />
       </div>
     </div>
   );
