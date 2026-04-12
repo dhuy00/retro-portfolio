@@ -1,4 +1,3 @@
-import './App.css'
 import Navigation from './components/nav/Navigation'
 import CustomCursor from './components/CustomCursor'
 import Hero from './pages/Hero'
@@ -14,12 +13,12 @@ function App() {
     <div className=' h-screen w-screen overflow-x-hidden pb-12'>
       <Background/>
       {/* <CustomCursor/> */}
-      <Navigation/>
-      <Hero/>
-      <About/>
+       <Navigation/>
+       <Hero/>
+            {/* <About/>
       <SectionBreak/>
       <Skills/>
-      <Projects/>
+      <Projects/> */}
     </div>
   )
 }

@@ -1,39 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap');
 @import "tailwindcss";
+@import "./theme.css"
 
-@theme {
-  /* Font Family */
-  --font-space-mono: "Space Mono", monospace;
-  --font-space-grotesk: "Space Grotesk", sans-serif;
-  /* Box Shadow */
-  --shadow-hard: 4px 4px 0px 0px #000;
-  --shadow-sm: 2px 2px 0px 0px #000;
-  --shadow-md: 6px 6px 0px 0px #000;
-  --shadow-lg: 8px 8px 0px 0px #000;
-  --shadow-xl: 12px 12px 0px 0px #000;
-}
-body {
-  /* cursor: none; */
-  /* We use a custom cursor */
-  background-color: #fffdf5;
-  background-image:
-    radial-gradient(#000 1px, transparent 1px),
-    linear-gradient(to right, #e5e5e5 1px, transparent 1px),
-    linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
-  background-size:
-    40px 40px,
-    100px 100px,
-    100px 100px;
-}
-
-#cursor {
-  pointer-events: none;
-  position: fixed;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition:
-    width 0.2s,
-    height 0.2s,
-    background-color 0.2s,
-    transform 0.1s;
-}

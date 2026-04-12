@@ -33,23 +33,23 @@ const Navigation = () => {
 
   const handleSwicthTab = (id) => {
     setActiveTab(id);
-  }
+  };
 
   return (
     <div
-      className="bg-white fixed top-0 left-0 right-0 px-4 py-2 flex border-2 border-black
-    justify-between items-center font-space-mono font-bold pr-32 shadow-hard mr-2 box-border z-[999]"
+      className="bg-background/80 border-b-2 border-primary/50 fixed top-0 left-0 right-0 backdrop-blur-sm
+      py-3 px-12 flex items-center justify-between z-50"
     >
       <NameIcon />
-      <div className="gap-8 flex items-center ">
+      <div className="font-orbitron gap-12 flex text-sm font-semibold mr-24">
         {nav.map((item) => (
-          <span className={`hover:bg-[#51A2FF] px-4 py-1.5 border hover:border hover:border-black 
-          cursor-pointer ${activeTab === item.id ? 'bg-[#FFDF20] pointer-events-none border-black' : 'border-transparent '}`}
-          onClick={() => handleSwicthTab(item.id)}>
-            /{item.text.toUpperCase()}
-          </span>
+          <a
+            onClick={() => handleSwicthTab(item.id)}
+            className={`cursor-pointer hover:text-accent transition-colors ${activeTab === item.id ? 'text-accent' : ''}`}
+          >
+            {item.text.toUpperCase()}
+          </a>
         ))}
-        <button className="bg-[#05DF72] px-4 py-1.5 border">CONTACT</button>
       </div>
     </div>
   );
