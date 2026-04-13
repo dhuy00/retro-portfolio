@@ -6,6 +6,8 @@ import { MdOutlineFileDownload } from "react-icons/md";
 import ArcadeMachine from "../components/hero/ArcadeMachine";
 import Particles from "../components/hero/Particles";
 import GlitchText from "../components/common/GlitchText";
+import CatScroll from "../components/hero/CatScroll";
+import { motion } from "motion/react";
 
 const Hero = () => {
   const description =
@@ -58,9 +60,28 @@ const Hero = () => {
       <Particles />
 
       {/* Arcade Machine */}
-      <div className="absolute right-32 top-[22%] w-[550px]">
-        <ArcadeMachine />
+      <div className="absolute right-32 top-[22%] ">
+        <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-3xl" />
+        <div className="relative w-[550px]">
+          <ArcadeMachine />
+        </div>
       </div>
+
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-10 left-0 right-0 flex items-center justify-center
+        flex-col"
+      >
+        <CatScroll />
+        <motion.span
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="text-accent text-xs font-press-start"
+        >
+          SCROLL
+        </motion.span>
+      </motion.div>
     </div>
   );
 };

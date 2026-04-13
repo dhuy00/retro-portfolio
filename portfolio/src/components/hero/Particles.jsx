@@ -31,7 +31,7 @@ const Particles = () => {
               left: `${x}%`,
               top: `${y}%`,
               fontFamily: "'Press Start 2P', monospace",
-              fontSize: '36px',
+              fontSize: '24px',
               color: ['#ff00ff', '#00ffff', '#8b5cf6'][Math.floor(Math.random() * 3)]
             }}
             animate={{
