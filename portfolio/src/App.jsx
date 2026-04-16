@@ -15,6 +15,7 @@ function App() {
       {/* <CustomCursor/> */}
        <Navigation/>
        <Hero/>
+       <About/>
             {/* <About/>
       <SectionBreak/>
       <Skills/>

@@ -15,7 +15,7 @@ const Hero = () => {
   return (
     <div className="mt-14 h-[640px] w-full relative flex items-center font-orbitron">
       {/* Background Gradient */}
-      <div className="z-0 absolute inset-0 bg-gradient-to-br from-[#1a0f2e] via-[#2d1b4e] to-[#0a0118]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f2e] via-[#2d1b4e] to-[#0f0820]" />
       <AnimatedGrid />
       <ScanlineEffect />
       {/* Corner */}
@@ -57,7 +57,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <Particles />
+      {/* <Particles /> */}
 
       {/* Arcade Machine */}
       <div className="absolute right-32 top-[22%] ">
