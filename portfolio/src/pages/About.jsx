@@ -5,7 +5,8 @@ import { FaBullseye } from "react-icons/fa6";
 
 
 const About = () => {
-  const buttonStyle = 'flex items-center gap-2 px-10 py-3.5 border-primary border-2'
+  const buttonStyle = `flex items-center gap-2 px-8 py-4 border-2 border-muted-foreground/30 
+  text-muted-foreground hover:border-accent hover:text-accent`
   return (
     <div className="w-screen relative py-24">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0f0820] via-[#1a0f2e] to-[#0f0820]" />
@@ -13,7 +14,7 @@ const About = () => {
         <h1 className="font-press-start text-[3rem] text-accent">
           ABOUT <span className="text-primary">ME</span>
         </h1>
-        <div className="flex gap-4">
+        <div className="flex gap-4 font-orbitron">
           <button className={buttonStyle}>
             <SiThestorygraph/>
             <span>MY STORY</span>
