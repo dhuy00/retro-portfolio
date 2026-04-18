@@ -38,7 +38,7 @@ const Navigation = () => {
   return (
     <div
       className="bg-background/80 border-b-2 border-primary/50 fixed top-0 left-0 right-0 backdrop-blur-sm
-      py-3 px-12 flex items-center justify-between z-50"
+      py-3 px-12 flex items-center justify-between z-100"
     >
       <NameIcon />
       <div className="font-orbitron gap-12 flex text-sm font-semibold mr-24">
