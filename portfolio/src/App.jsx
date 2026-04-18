@@ -6,6 +6,7 @@ import Background from './components/background/Background'
 import Skills from './pages/Skills'
 import SectionBreak from './components/common/SectionBreak'
 import Projects from './pages/Projects'
+import TechStack from './pages/TechStack'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
        <Navigation/>
        <Hero/>
        <About/>
+       <TechStack/>
             {/* <About/>
       <SectionBreak/>
       <Skills/>

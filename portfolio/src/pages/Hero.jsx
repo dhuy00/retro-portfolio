@@ -57,7 +57,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* <Particles /> */}
+      <Particles />
 
       {/* Arcade Machine */}
       <div className="absolute right-32 top-[22%] ">

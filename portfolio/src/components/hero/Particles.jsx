@@ -7,18 +7,54 @@ const Particles = () => {
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
-      size: Math.random() * 30 + 2,
+      size: Math.random() * 4 + 2,
       duration: Math.random() * 10 + 10,
       delay: Math.random() * 5,
-      color: ['#ff00ff', '#00ffff', '#8b5cf6'][Math.floor(Math.random() * 3)]
+      color: ["#ff00ff", "#00ffff", "#8b5cf6"][Math.floor(Math.random() * 3)],
     }));
   }, []);
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {particles.map((particle) => (
+        <motion.div
+          key={particle.id}
+          className="absolute rounded-full"
+          style={{
+            left: `${particle.x}%`,
+            top: `${particle.y}%`,
+            width: particle.size,
+            height: particle.size,
+            backgroundColor: particle.color,
+            boxShadow: `0 0 ${particle.size * 2}px ${particle.color}`,
+          }}
+          animate={{
+            y: [0, -100, 0],
+            opacity: [0, 1, 0],
+          }}
+          transition={{
+            duration: particle.duration,
+            repeat: Infinity,
+            delay: particle.delay,
+            ease: "easeInOut",
+          }}
+        />
+      ))}
+
       {/* Floating code symbols */}
       {[...Array(10)].map((_, i) => {
-        const symbols = ['{}', '()', '</>', '+',];
+        const symbols = [
+          "<>",
+          "{}",
+          "()",
+          "[]",
+          "/>",
+          "< />",
+          "=>",
+          "++",
+          "&&",
+          "||",
+        ];
         const symbol = symbols[Math.floor(Math.random() * symbols.length)];
         const x = Math.random() * 100;
         const y = Math.random() * 100;
@@ -31,17 +67,16 @@ const Particles = () => {
               left: `${x}%`,
               top: `${y}%`,
               fontFamily: "'Press Start 2P', monospace",
-              fontSize: '24px',
-              color: ['#ff00ff', '#00ffff', '#8b5cf6'][Math.floor(Math.random() * 3)]
+              fontSize: "12px",
             }}
             animate={{
               y: [0, -200],
               opacity: [0, 0.5, 0],
             }}
             transition={{
-              duration: 5 + Math.random(),
+              duration: 15 + Math.random() * 10,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: Math.random() * 10,
               ease: "linear",
             }}
           >
@@ -60,9 +95,9 @@ const Particles = () => {
             className="absolute text-accent/10"
             style={{
               left: `${x}%`,
-              top: '-20px',
+              top: "-20px",
               fontFamily: "'Press Start 2P', monospace",
-              fontSize: '10px',
+              fontSize: "10px",
             }}
             animate={{
               y: [0, window.innerHeight + 100],
@@ -75,7 +110,7 @@ const Particles = () => {
               ease: "linear",
             }}
           >
-            {Math.random() > 0.5 ? '1' : '0'}
+            {Math.random() > 0.5 ? "1" : "0"}
           </motion.div>
         );
       })}
@@ -85,7 +120,11 @@ const Particles = () => {
         const size = 50 + Math.random() * 100;
         const x = Math.random() * 100;
         const y = Math.random() * 100;
-        const color = ['rgba(255,0,255,0.1)', 'rgba(0,255,255,0.1)', 'rgba(139,92,246,0.1)'][i % 3];
+        const color = [
+          "rgba(255,0,255,0.1)",
+          "rgba(0,255,255,0.1)",
+          "rgba(139,92,246,0.1)",
+        ][i % 3];
 
         return (
           <motion.div
@@ -114,6 +153,6 @@ const Particles = () => {
       })}
     </div>
   );
-}
+};
 
-export default Particles
+export default Particles;
