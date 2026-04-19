@@ -14,6 +14,7 @@ import { VscTools } from "react-icons/vsc";
 import SkillCard from "../components/skills/SkillCard";
 import Certification from "../components/skills/Certification";
 import SoftSkill from "../components/skills/SoftSkill";
+import Currently from "../components/skills/Currently";
 
 const TechStack = () => {
   const [activeTab, setIsActive] = useState(0);
@@ -118,7 +119,7 @@ const TechStack = () => {
         </div>
 
         {/* Skill list */}
-        <div className="w-[1050px] flex justify-center mt-12">
+        <div className="w-[1100px] flex justify-center mt-12">
           <div className="grid grid-cols-4 gap-4 flex-wrap">
             {
               skillList.map((item) => (
@@ -128,10 +129,12 @@ const TechStack = () => {
           </div>
         </div>
 
-        <div className="w-[1050px] flex mt-12 gap-6">
+        <div className="w-[1100px] flex mt-12 gap-6">
             <Certification/>
             <SoftSkill/>
         </div>
+
+        <Currently/>
       </div>
     </div>
   );

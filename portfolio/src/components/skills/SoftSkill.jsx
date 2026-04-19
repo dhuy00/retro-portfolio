@@ -30,7 +30,7 @@ const SoftSkill = () => {
     },
   ]
   return (
-    <div className='w-1/2 bg-card border-2 border-accent p-8'>
+    <div className='w-1/2 bg-card border-2 border-accent/50 p-8'>
       <div className='flex items-center font-press-start gap-2'>
         <FaBook className='text-lg text-accent'/>
         <span className='text-[14px] text-accent'>SOFT SKILLS</span>
@@ -38,8 +38,8 @@ const SoftSkill = () => {
       <div className='flex gap-4 mt-4 flex-wrap'>
         {
           certifications.map((item) => (
-            <div className='border-2 border-accent flex justify-between py-2 px-3 font-orbitron
-            text-[12px]'>
+            <div className='border-2 border-accent/50 flex justify-between py-2.5 px-4 font-orbitron
+            text-[12px] text-foreground hover:border-accent hover:bg-accent/10 transition'>
               {item.name}
             </div>
           ))

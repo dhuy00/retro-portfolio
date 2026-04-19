@@ -15,7 +15,7 @@ const Certification = () => {
     },
   ]
   return (
-    <div className='w-1/2 bg-card border-2 border-primary p-8'>
+    <div className='w-1/2 bg-card border-2 border-primary/50 p-8'>
       <div className='flex items-center font-press-start gap-2'>
         <FaTrophy className='text-lg text-yellow-500'/>
         <span className='text-[14px] text-primary'>CERTIFICATIONS</span>
@@ -24,7 +24,7 @@ const Certification = () => {
         {
           certifications.map((item) => (
             <div className='border-l-4 border-accent flex justify-between py-2 pl-4 font-orbitron
-            text-[14px] font-medium'>
+            text-[14px] font-medium text-foreground'>
               <span>{item.name}</span>
               <span className='text-accent'>{item.year}</span>
             </div>
