@@ -1,47 +1,35 @@
 import React from 'react'
-import { IoColorPaletteOutline } from "react-icons/io5";
-
-const CertificationItem = ({item}) => {
-  return (
-    <div className={`flex flex-col py-6 px-8 pr-12 border-4 gap-4 w-[300px] ${item.color}`}>
-      <span className='border-2 w-fit bg-white px-4 py-0.5 text-sm font-semibold'>{item.year}</span>
-      <span className='font-semibold text-lg'>{item.name}</span>
-    </div>
-  )
-}
+import { FaTrophy } from "react-icons/fa6";
 
 const Certification = () => {
   const certifications = [
     {
-      id: 1,
+      id: 0,
       name: "AWS Certified Developer",
-      year: 2026,
-      color: 'bg-yellow-300'
+      year: 2025
     },
     {
-      id: 2,
-      name: "945 - TOEIC Reading & Listening",
-      year: 2026,
-      color: 'bg-blue-400'
-    },
-    {
-      id: 3,
-      name: "320 - TOEIC Speaking & Writing",
-      year: 2026,
-      color: 'bg-green-400'
+      id: 1,
+      name: "TOEIC Reading & Listening - 945",
+      year: 2025
     },
   ]
   return (
-    <div className='my-8'>
-      <div className='flex items-center gap-4 text-[1.8rem] font-mono-space'>
-        <IoColorPaletteOutline className='text-[2.2rem]'/>
-        <span className='font-semibold'>CERTIFICATIONS</span>
+    <div className='w-1/2 bg-card border-2 border-primary p-8'>
+      <div className='flex items-center font-press-start gap-2'>
+        <FaTrophy className='text-lg text-yellow-500'/>
+        <span className='text-[14px] text-primary'>CERTIFICATIONS</span>
       </div>
-      {/* List */}
-      <div className='flex gap-4 mt-4'>
-        {certifications.map((item) => (
-          <CertificationItem item={item}/>
-        ))}
+      <div className='flex flex-col gap-4 mt-4'>
+        {
+          certifications.map((item) => (
+            <div className='border-l-4 border-accent flex justify-between py-2 pl-4 font-orbitron
+            text-[14px] font-medium'>
+              <span>{item.name}</span>
+              <span className='text-accent'>{item.year}</span>
+            </div>
+          ))
+        }
       </div>
     </div>
   )

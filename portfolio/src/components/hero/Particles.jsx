@@ -9,7 +9,7 @@ const Particles = () => {
       y: Math.random() * 100,
       size: Math.random() * 4 + 2,
       duration: Math.random() * 10 + 10,
-      delay: Math.random() * 5,
+      delay: Math.random(),
       color: ["#ff00ff", "#00ffff", "#8b5cf6"][Math.floor(Math.random() * 3)],
     }));
   }, []);

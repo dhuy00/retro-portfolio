@@ -12,6 +12,8 @@ import { IoColorPaletteOutline } from "react-icons/io5";
 import { LuDatabase } from "react-icons/lu";
 import { VscTools } from "react-icons/vsc";
 import SkillCard from "../components/skills/SkillCard";
+import Certification from "../components/skills/Certification";
+import SoftSkill from "../components/skills/SoftSkill";
 
 const TechStack = () => {
   const [activeTab, setIsActive] = useState(0);
@@ -116,7 +118,7 @@ const TechStack = () => {
         </div>
 
         {/* Skill list */}
-        <div className="w-[1200px] flex justify-center mt-12">
+        <div className="w-[1050px] flex justify-center mt-12">
           <div className="grid grid-cols-4 gap-4 flex-wrap">
             {
               skillList.map((item) => (
@@ -124,6 +126,11 @@ const TechStack = () => {
               )) 
             }
           </div>
+        </div>
+
+        <div className="w-[1050px] flex mt-12 gap-6">
+            <Certification/>
+            <SoftSkill/>
         </div>
       </div>
     </div>
