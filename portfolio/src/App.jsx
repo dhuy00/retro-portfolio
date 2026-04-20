@@ -7,6 +7,8 @@ import Skills from './pages/Skills'
 import SectionBreak from './components/common/SectionBreak'
 import Projects from './pages/Projects'
 import TechStack from './pages/TechStack'
+import Works from './pages/Works'
+import Experience from './pages/Experience'
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
        <Hero/>
        <About/>
        <TechStack/>
+       <Works/>
+       <Experience/>
             {/* <About/>
       <SectionBreak/>
       <Skills/>
