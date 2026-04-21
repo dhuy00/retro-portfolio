@@ -6,7 +6,8 @@ import Story from "../components/about/Story";
 import { motion } from "motion/react";
 import Interest from "../components/about/Interest";
 import Values from "../components/about/Values";
-import ExperienceCard from "./ExperienceCard";
+import ExperienceCard from "../components/experience/ExperienceCard";
+import Education from "../components/experience/Education";
 
 const Experience = () => {
   const [activeTab, setIsActive] = useState(0);
@@ -45,6 +46,7 @@ const Experience = () => {
           h-[350px] left-1/2"></span>
           <ExperienceCard/>
         </div>
+        <Education/>
       </div>
     </div>
   );

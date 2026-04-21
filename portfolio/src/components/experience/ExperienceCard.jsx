@@ -16,7 +16,7 @@ const ExperienceCard = () => {
   };
   return (
     <div className="">
-      <div className="bg-card border-2 border-primary/50 p-6 flex flex-col w-[48%]">
+      <div className="bg-card border-2 border-primary/50 p-6 flex flex-col w-[48%] hover:border-primary transition">
             <span className="absolute w-4 h-4 bg-primary right-1/2 translate-x-1/2"></span>
         <div className="flex flex-col gap-2">
           <div className="flex items-center font-press-start gap-6 text-[13px]">
