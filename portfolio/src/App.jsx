@@ -9,6 +9,7 @@ import Projects from './pages/Projects'
 import TechStack from './pages/TechStack'
 import Works from './pages/Works'
 import Experience from './pages/Experience'
+import Contact from './pages/Contact'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
        <TechStack/>
        <Works/>
        <Experience/>
+       <Contact/>
             {/* <About/>
       <SectionBreak/>
       <Skills/>
