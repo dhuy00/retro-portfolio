@@ -1,27 +1,28 @@
 import React from "react";
 import { BiMapPin } from "react-icons/bi";
+import { LuGithub } from "react-icons/lu";
+import { FiLinkedin } from "react-icons/fi";
+import { IoMailOutline } from "react-icons/io5";
 
 const ContactInfo = () => {
   const contact = [
     {
       id: 0,
-      icon: "",
+      icon: <LuGithub />,
+      name: "Github",
       text: "github.com/yourname",
     },
     {
       id: 1,
-      icon: "",
+      icon: <FiLinkedin />,
+      name: "Linkedin",
       text: "linkedin.in/yourname",
     },
     {
       id: 2,
-      icon: "",
+      icon: <IoMailOutline />,
+      name: "Mail",
       text: "twitter.com/yourname",
-    },
-    {
-      id: 3,
-      icon: "",
-      text: "hello@yourname.dev",
     },
   ];
   return (
@@ -45,12 +46,16 @@ const ContactInfo = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col">
-        <h3>CONNECT</h3>
-        <div className="flex flex-col">
+      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 p-6">
+        <h3 className="font-press-start text-sm text-primary">CONNECT</h3>
+        <div className="flex flex-col gap-6 mt-4 font-orbitron">
           {contact.map((item) => (
-            <div>
-              <span>{item.text}</span>
+            <div className="flex gap-4 items-center text-muted-foreground">
+              <span className="text-[24px] text-primary">{item.icon}</span>
+              <div className="flex flex-col">
+                <span className="font-medium">{item.name}</span>
+                <span className="text-sm">{item.text}</span>
+              </div>
             </div>
           ))}
         </div>
