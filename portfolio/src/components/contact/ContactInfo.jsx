@@ -52,7 +52,7 @@ const ContactInfo = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 p-6 w-128">
+      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 px-6 py-10 w-128">
         <h3 className="font-press-start text-sm text-primary">CONNECT</h3>
         <div className="flex flex-col gap-6 mt-4 font-orbitron">
           {contact.map((item) => (
