@@ -21,7 +21,7 @@ const Contact = () => {
           <span className="text-primary [word-spacing:-20px]">GET IN <span className="text-accent">TOUCH</span></span>
         </h1>
         <span className="text-muted-foreground font-orbitron">Let's build something amazing together</span>
-        <div className="w-[1300px] relative flex gap-4 mt-8">
+        <div className="w-[1300px] relative flex gap-4 mt-8 justify-center">
           <ContactForm/>
           <ContactInfo/>
         </div>

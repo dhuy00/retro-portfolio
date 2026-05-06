@@ -24,6 +24,12 @@ const ContactInfo = () => {
       name: "Mail",
       text: "twitter.com/yourname",
     },
+    {
+      id: 2,
+      icon: <IoMailOutline />,
+      name: "Mail",
+      text: "twitter.com/yourname",
+    },
   ];
   return (
     <div>
@@ -46,7 +52,7 @@ const ContactInfo = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 p-6">
+      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 p-6 w-128">
         <h3 className="font-press-start text-sm text-primary">CONNECT</h3>
         <div className="flex flex-col gap-6 mt-4 font-orbitron">
           {contact.map((item) => (

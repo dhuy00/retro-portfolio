@@ -8,6 +8,7 @@ import Particles from "../components/hero/Particles";
 import GlitchText from "../components/common/GlitchText";
 import CatScroll from "../components/hero/CatScroll";
 import { motion } from "motion/react";
+import { HolographicCodeDisplay } from "../components/hero/HolographicCodeDisplay";
 
 const Hero = () => {
   const description =
@@ -59,13 +60,15 @@ const Hero = () => {
 
       <Particles />
 
-      {/* Arcade Machine */}
-      <div className="absolute right-32 top-[22%] ">
-        <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-accent/30 to-primary/30 blur-3xl" />
-        <div className="relative w-[550px]">
-          <ArcadeMachine />
-        </div>
-      </div>
+      {/* Holographic */}
+      <motion.div
+        initial={{ x: 100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="relative flex items-center justify-center scale-115"
+      >
+        <HolographicCodeDisplay />
+      </motion.div>
 
       <motion.div
         animate={{ y: [0, 10, 0] }}
