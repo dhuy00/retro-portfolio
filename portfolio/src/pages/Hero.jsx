@@ -14,7 +14,7 @@ const Hero = () => {
   const description =
     "Crafting elegant solutions to complex problems. Specializing in React, TypeScript, and modern web technologies.";
   return (
-    <div className="mt-14 h-[640px] w-full relative flex items-center font-orbitron">
+    <div id="home" className="mt-14 h-[640px] w-full relative flex items-center font-orbitron">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f2e] via-[#2d1b4e] to-[#0f0820]" />
       <AnimatedGrid />

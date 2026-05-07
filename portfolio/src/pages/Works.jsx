@@ -34,7 +34,7 @@ const Works = () => {
     text-muted-foreground font-semibold`;
 
   return (
-    <div className="w-screen relative py-24">
+    <div className="w-screen relative py-24" id="work">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0f0820] via-[#1a0f2e] to-[#0f0820]" />
 
       <div className="relative flex flex-col items-center">

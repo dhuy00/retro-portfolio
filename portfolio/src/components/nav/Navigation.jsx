@@ -6,26 +6,27 @@ const Navigation = () => {
     {
       id: 1,
       text: "Home",
+      link: "#home",
     },
     {
       id: 2,
       text: "About",
+      link: "#about",
     },
     {
       id: 3,
       text: "Skills",
+      link: "#skills",
     },
     {
       id: 4,
       text: "Work",
+      link: "#work",
     },
     {
       id: 5,
       text: "Experience",
-    },
-    {
-      id: 6,
-      text: "Logs",
+      link: "#experience",
     },
   ];
 
@@ -40,12 +41,13 @@ const Navigation = () => {
       className="bg-background/80 border-b-2 border-primary/50 fixed top-0 left-0 right-0 backdrop-blur-sm
       py-3 px-12 flex items-center justify-between z-100"
     >
-      <NameIcon />
+      <NameIcon setActiveTab={setActiveTab}/>
       <div className="font-orbitron gap-12 flex text-sm font-semibold mr-24">
         {nav.map((item) => (
           <a
+            href={item.link}
             onClick={() => handleSwicthTab(item.id)}
-            className={`cursor-pointer hover:text-accent transition-colors ${activeTab === item.id ? 'text-accent' : ''}`}
+            className={`cursor-pointer hover:text-accent transition-colors ${activeTab === item.id ? "text-accent" : ""}`}
           >
             {item.text.toUpperCase()}
           </a>

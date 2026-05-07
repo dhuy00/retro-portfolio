@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap');
 @import "tailwindcss";
-@import "./theme.css"
+@import "./theme.css";
 
+html,
+body {
+  scroll-behavior: smooth;
+  height: 100%;
+}

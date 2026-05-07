@@ -89,7 +89,7 @@ const TechStack = () => {
     font-semibold`;
 
   return (
-    <div className="w-screen relative py-24">
+    <div className="w-screen relative py-24" id="skills">
       <Background />
 
       <div className="relative flex flex-col items-center">

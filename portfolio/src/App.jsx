@@ -14,7 +14,7 @@ import Contact from './pages/Contact'
 function App() {
 
   return (
-    <div className=' h-screen w-screen overflow-x-hidden pb-12'>
+    <div className=' h-screen w-screen overflow-x-hidden scroll-smooth'>
       <Background/>
       {/* <CustomCursor/> */}
        <Navigation/>
