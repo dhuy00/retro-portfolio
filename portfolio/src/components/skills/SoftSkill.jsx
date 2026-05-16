@@ -1,5 +1,4 @@
-import React from 'react'
-import { FaTrophy } from "react-icons/fa6";
+import React from "react";
 import { FaBook } from "react-icons/fa6";
 
 const SoftSkill = () => {
@@ -28,25 +27,30 @@ const SoftSkill = () => {
       id: 5,
       name: "Agile/Scrum",
     },
-  ]
+  ];
+
   return (
-    <div className='w-1/2 bg-card border-2 border-accent/50 p-8'>
-      <div className='flex items-center font-press-start gap-2'>
-        <FaBook className='text-lg text-accent'/>
-        <span className='text-[14px] text-accent'>SOFT SKILLS</span>
+    <div className="w-full lg:w-1/2 bg-card border-2 border-accent/50 rounded-lg p-5 sm:p-6 md:p-8">
+      <div className="flex items-center gap-2 font-press-start">
+        <FaBook className="text-base sm:text-lg text-accent" />
+
+        <span className="text-[12px] sm:text-[14px] text-accent">
+          SOFT SKILLS
+        </span>
       </div>
-      <div className='flex gap-4 mt-4 flex-wrap'>
-        {
-          certifications.map((item) => (
-            <div className='border-2 border-accent/50 flex justify-between py-2.5 px-4 font-orbitron
-            text-[12px] text-foreground hover:border-accent hover:bg-accent/10 transition'>
-              {item.name}
-            </div>
-          ))
-        }
+
+      <div className="flex flex-wrap gap-3 sm:gap-4 mt-5">
+        {certifications.map((item) => (
+          <div
+            key={item.id}
+            className="border-2 border-accent/50 px-3 sm:px-4 py-2 sm:py-2.5 font-orbitron text-[11px] sm:text-[12px] text-foreground hover:border-accent hover:bg-accent/10 transition-all duration-300 break-words"
+          >
+            {item.name}
+          </div>
+        ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SoftSkill
+export default SoftSkill;

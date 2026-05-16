@@ -46,44 +46,44 @@ const TechStack = () => {
     {
       id: 0,
       name: "React",
-      category: '>_ FRONTEND'
+      category: ">_ FRONTEND",
     },
     {
       id: 1,
       name: "Typescript",
-      category: '>_ FRONTEND'
+      category: ">_ FRONTEND",
     },
     {
       id: 2,
       name: "Next.JS",
-      category: '>_ FRONTEND'
+      category: ">_ FRONTEND",
     },
     {
       id: 3,
       name: "Tailwind CSS",
-      category: '>_ FRONTEND'
+      category: ">_ FRONTEND",
     },
     {
       id: 4,
       name: "NodeJS",
-      category: '>_ BACKEND'
+      category: ">_ BACKEND",
     },
     {
       id: 4,
       name: "NodeJS",
-      category: '>_ BACKEND'
+      category: ">_ BACKEND",
     },
     {
       id: 4,
       name: "NodeJS",
-      category: '>_ BACKEND'
+      category: ">_ BACKEND",
     },
     {
       id: 4,
       name: "NodeJS",
-      category: '>_ BACKEND'
+      category: ">_ BACKEND",
     },
-  ]
+  ];
 
   const buttonStyle = `flex items-center gap-2 px-8 py-4 border-2 
     font-semibold`;
@@ -96,21 +96,29 @@ const TechStack = () => {
         <h1 className="font-press-start text-[3rem] text-accent">
           TECH <span className="text-primary">STACK</span>
         </h1>
+
         <span className="font-orbitron text-muted-foreground">
           Tools and technologies I use to build my products
         </span>
 
-        {/* Tabs */}
-        <div className="flex gap-4 font-orbitron mt-12">
+        <div className="grid grid-cols-2 md:flex gap-3 md:gap-4 font-orbitron mt-8 md:mt-12">
           {tabs.map((item) => (
             <button
               key={item.id}
               onClick={() => setIsActive(item.id)}
-              className={`${buttonStyle} ${
-                activeTab === item.id
-                  ? "border-accent bg-accent/20 text-accent shadow-[0_0_20px_rgba(0,255,255,0.4)] "
-                  : "hover:border-primary transition hover:scale-105 text-muted-foreground"
-              }`}
+              className={`
+        ${buttonStyle}
+        flex-1 sm:flex-none
+        min-w-[140px]
+        justify-center
+        px-4 py-3
+        text-sm md:text-base
+        ${
+          activeTab === item.id
+            ? "border-accent bg-accent/20 text-accent shadow-[0_0_20px_rgba(0,255,255,0.4)]"
+            : "hover:border-primary transition hover:scale-105 text-muted-foreground"
+        }
+      `}
             >
               {item.icon}
               <span>{item.text}</span>
@@ -118,23 +126,24 @@ const TechStack = () => {
           ))}
         </div>
 
-        {/* Skill list */}
-        <div className="w-[1100px] flex justify-center mt-12">
-          <div className="grid grid-cols-4 gap-4 flex-wrap">
-            {
-              skillList.map((item) => (
-                <SkillCard category={item.category} text={item.name}/>
-              )) 
-            }
+        <div className="w-full max-w-[1100px] flex justify-center mt-12 px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
+            {skillList.map((item) => (
+              <SkillCard
+                key={item.name}
+                category={item.category}
+                text={item.name}
+              />
+            ))}
           </div>
         </div>
 
-        <div className="w-[1100px] flex mt-12 gap-6">
-            <Certification/>
-            <SoftSkill/>
+        <div className="w-full max-w-[1100px] flex flex-col lg:flex-row mt-12 gap-6 px-4">
+          <Certification />
+          <SoftSkill />
         </div>
 
-        <Currently/>
+        <Currently />
       </div>
     </div>
   );

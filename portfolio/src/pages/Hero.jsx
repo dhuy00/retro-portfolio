@@ -1,9 +1,7 @@
 import React from "react";
 import AnimatedGrid from "../components/hero/AnimatedGrid";
 import ScanlineEffect from "../components/hero/ScanlineEffect";
-import { GrTopCorner } from "react-icons/gr";
 import { MdOutlineFileDownload } from "react-icons/md";
-import ArcadeMachine from "../components/hero/ArcadeMachine";
 import Particles from "../components/hero/Particles";
 import GlitchText from "../components/common/GlitchText";
 import CatScroll from "../components/hero/CatScroll";
@@ -13,79 +11,76 @@ import { HolographicCodeDisplay } from "../components/hero/HolographicCodeDispla
 const Hero = () => {
   const description =
     "Crafting elegant solutions to complex problems. Specializing in React, TypeScript, and modern web technologies.";
+
   return (
-    <div id="home" className="mt-14 h-[640px] w-full relative flex items-center font-orbitron">
-      {/* Background Gradient */}
+    <section
+      id="home"
+      className="relative overflow-hidden font-orbitron min-h-screen flex items-center px-6 sm:px-10 lg:px-16 xl:px-24 pt-24 pb-20"
+    >
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a0f2e] via-[#2d1b4e] to-[#0f0820]" />
+
       <AnimatedGrid />
       <ScanlineEffect />
-      {/* Corner */}
-      <div className="absolute top-8 left-12 w-12 h-12 border-l-4 border-t-4 border-primary opacity-50" />
-      <div className="absolute bottom-8 right-12 w-12 h-12 border-r-4 border-b-4 border-accent opacity-50" />
-
-      {/* Main content */}
-      <div className="relative mx-48 flex flex-col leading-none">
-        <span
-          className="text-accent border px-5 py-2 border-accent text-sm font-semibold bg-accent/10
-        w-fit"
-        >
-          HI! IT'S DUC HUY
-        </span>
-        <GlitchText className="font-press-start text-[2.5rem] mt-8">
-          I'M A <span className="text-primary">FULLSTACK</span>
-        </GlitchText>
-        <GlitchText className="font-press-start text-[4rem] text-accent mt-4">
-          DEVELOPER
-        </GlitchText>
-        <p className="max-w-[450px] text-muted-foreground text-[16px] leading-relaxed mt-8">
-          {description}
-        </p>
-        <div className="flex gap-4 mt-8">
-          <button
-            className="text-primary-foreground bg-primary border-2 border-primary 
-          shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] 
-          transition px-8 py-2 hover:scale-105"
-          >
-            HIRE ME
-          </button>
-          <button
-            className="flex items-center text-accent gap-1 border-2 border-accent px-8 py-2
-          hover:bg-accent/10 transition hover:scale-105"
-          >
-            <MdOutlineFileDownload className="text-2xl" />
-            <span>RESUME</span>
-          </button>
-        </div>
-      </div>
-
       <Particles />
 
-      {/* Holographic */}
-      <motion.div
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="relative flex items-center justify-center scale-115"
-      >
-        <HolographicCodeDisplay />
-      </motion.div>
+      <div className="relative z-10 w-full max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-16">
+        <div className="flex-1 text-center lg:text-left">
+          <span className="inline-block text-accent border border-accent bg-accent/10 px-4 py-2 text-xs sm:text-sm font-semibold">
+            HI! IT'S DUC HUY
+          </span>
+
+          <div className="mt-8 leading-none">
+            <GlitchText className="font-press-start text-[1.6rem] sm:text-[2.2rem] lg:text-[2.8rem]">
+              I'M A <span className="text-primary pt-2">FULLSTACK</span>
+            </GlitchText>
+
+            <GlitchText className="font-press-start text-accent mt-4 text-[2.4rem] sm:text-[3.5rem] lg:text-[4.5rem]">
+              DEVELOPER
+            </GlitchText>
+          </div>
+
+          <p className="mt-8 text-muted-foreground leading-relaxed text-sm sm:text-base max-w-[500px] mx-auto lg:mx-0">
+            {description}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
+            <button className="text-primary-foreground bg-primary border-2 border-primary shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] transition px-8 py-3 hover:scale-105 text-sm sm:text-base">
+              HIRE ME
+            </button>
+
+            <button className="flex items-center justify-center text-accent gap-2 border-2 border-accent px-8 py-3 hover:bg-accent/10 transition hover:scale-105 text-sm sm:text-base">
+              <MdOutlineFileDownload className="text-xl sm:text-2xl" />
+              <span>RESUME</span>
+            </button>
+          </div>
+        </div>
+
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="flex-1 flex items-center justify-center w-full scale-90 sm:scale-100 lg:scale-110"
+        >
+          <HolographicCodeDisplay />
+        </motion.div>
+      </div>
 
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-10 left-0 right-0 flex items-center justify-center
-        flex-col"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center"
       >
         <CatScroll />
+
         <motion.span
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-accent text-xs font-press-start"
+          className="text-accent text-[10px] sm:text-xs font-press-start mt-1"
         >
           SCROLL
         </motion.span>
       </motion.div>
-    </div>
+    </section>
   );
 };
 

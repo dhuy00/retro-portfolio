@@ -15,52 +15,64 @@ const ContactInfo = () => {
     {
       id: 1,
       icon: <FiLinkedin />,
-      name: "Linkedin",
-      text: "linkedin.in/yourname",
+      name: "LinkedIn",
+      text: "linkedin.com/in/yourname",
     },
     {
       id: 2,
       icon: <IoMailOutline />,
-      name: "Mail",
-      text: "twitter.com/yourname",
-    },
-    {
-      id: 2,
-      icon: <IoMailOutline />,
-      name: "Mail",
-      text: "twitter.com/yourname",
+      name: "Email",
+      text: "your@email.com",
     },
   ];
+
   return (
-    <div>
-      <div className="bg-card border-2 border-accent/50 p-5">
+    <div className="w-full lg:w-[420px]">
+      {/* Status */}
+      <div className="bg-card border-2 border-accent/50 p-4">
         <div className="flex items-center gap-2">
-          <div className="w-3 h-3 bg-accent rounded-full animate-pulse" />
-          <span className="text-accent font-press-start text-[10px]">
+          <div className="w-3 h-3 bg-accent rounded-full animate-pulse shrink-0" />
+
+          <span className="text-accent font-press-start text-[9px] sm:text-[10px] leading-relaxed">
             STATUS: AVAILABLE FOR WORK
           </span>
         </div>
       </div>
-      {/* Availability */}
+
+      {/* Location */}
       <div className="bg-card border-2 border-primary/30 p-4 mt-4">
-        <div className="space-y-4">
-          <div className="flex items-center gap-3">
-            <BiMapPin className="w-5 h-5 text-primary" />
-            <span style={{ fontFamily: "'Orbitron', sans-serif" }}>
-              Ho Chi Minh City, Viet Nam
-            </span>
-          </div>
+        <div className="flex items-center gap-3">
+          <BiMapPin className="w-5 h-5 text-primary shrink-0" />
+
+          <span className="font-orbitron text-sm sm:text-base">
+            Ho Chi Minh City, Viet Nam
+          </span>
         </div>
       </div>
-      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 px-6 py-10 w-128">
-        <h3 className="font-press-start text-sm text-primary">CONNECT</h3>
-        <div className="flex flex-col gap-6 mt-4 font-orbitron">
+
+      {/* Contact Links */}
+      <div className="flex flex-col bg-card border-2 border-primary/50 mt-4 px-5 py-8 sm:px-6 
+      sm:py-10 w-full">
+        <h3 className="font-press-start text-xs sm:text-sm text-primary">
+          CONNECT
+        </h3>
+
+        <div className="flex flex-col gap-6 mt-6 font-orbitron">
           {contact.map((item) => (
-            <div className="flex gap-4 items-center text-muted-foreground">
-              <span className="text-[24px] text-primary">{item.icon}</span>
+            <div
+              key={item.id}
+              className="flex gap-4 items-start text-muted-foreground break-all"
+            >
+              <span className="text-2xl text-primary shrink-0">
+                {item.icon}
+              </span>
+
               <div className="flex flex-col">
-                <span className="font-medium">{item.name}</span>
-                <span className="text-sm">{item.text}</span>
+                <span className="font-medium text-sm sm:text-base">
+                  {item.name}
+                </span>
+
+                <span className="text-xs sm:text-sm">{item.text}</span>
               </div>
             </div>
           ))}
