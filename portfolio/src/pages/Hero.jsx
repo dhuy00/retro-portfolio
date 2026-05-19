@@ -10,7 +10,7 @@ import { HolographicCodeDisplay } from "../components/hero/HolographicCodeDispla
 
 const Hero = () => {
   const description =
-    "Crafting elegant solutions to complex problems. Specializing in React, TypeScript, and modern web technologies.";
+    "Building modern web applications while continuously learning and improving my skills in React, TypeScript, and full-stack development.";
 
   return (
     <section
@@ -44,11 +44,8 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-            <button className="text-primary-foreground bg-primary border-2 border-primary shadow-[0_0_20px_rgba(255,0,255,0.4)] hover:shadow-[0_0_30px_rgba(255,0,255,0.6)] transition px-8 py-3 hover:scale-105 text-sm sm:text-base">
-              HIRE ME
-            </button>
-
-            <button className="flex items-center justify-center text-accent gap-2 border-2 border-accent px-8 py-3 hover:bg-accent/10 transition hover:scale-105 text-sm sm:text-base">
+            <button className="flex items-center justify-center text-accent gap-2 border-2 border-accent
+             px-8 py-3 hover:bg-accent/10 transition hover:scale-105 text-sm sm:text-base cursor-pointer">
               <MdOutlineFileDownload className="text-xl sm:text-2xl" />
               <span>RESUME</span>
             </button>

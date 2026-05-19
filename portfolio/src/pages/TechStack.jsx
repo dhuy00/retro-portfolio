@@ -1,44 +1,52 @@
-import React, { useState } from "react";
-import { SiThestorygraph } from "react-icons/si";
-import { FaRegHeart } from "react-icons/fa";
-import { FaBullseye } from "react-icons/fa6";
-import Story from "../components/about/Story";
+import React, { useMemo, useState } from "react";
 import { motion } from "motion/react";
-import Interest from "../components/about/Interest";
-import Values from "../components/about/Values";
-import Background from "../components/skills/Background";
+
 import { HiOutlineLightningBolt } from "react-icons/hi";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { LuDatabase } from "react-icons/lu";
 import { VscTools } from "react-icons/vsc";
+
+import Background from "../components/skills/Background";
 import SkillCard from "../components/skills/SkillCard";
 import Certification from "../components/skills/Certification";
 import SoftSkill from "../components/skills/SoftSkill";
 import Currently from "../components/skills/Currently";
+import { HiServer } from "react-icons/hi";
+
 
 const TechStack = () => {
-  const [activeTab, setIsActive] = useState(0);
+  const [activeTab, setActiveTab] = useState(0);
 
   const tabs = [
     {
       id: 0,
       text: "ALL",
       icon: <HiOutlineLightningBolt />,
+      category: "ALL",
     },
     {
       id: 1,
       text: "FRONTEND",
       icon: <IoColorPaletteOutline />,
+      category: "FRONTEND",
     },
     {
       id: 2,
       text: "BACKEND",
-      icon: <LuDatabase />,
+      icon: <HiServer />,
+      category: "BACKEND",
     },
     {
       id: 3,
+      text: "DATABASE",
+      icon: <LuDatabase />,
+      category: "DATABASE",
+    },
+    {
+      id: 4,
       text: "TOOLS",
       icon: <VscTools />,
+      category: "TOOLS",
     },
   ];
 
@@ -46,47 +54,79 @@ const TechStack = () => {
     {
       id: 0,
       name: "React",
-      category: ">_ FRONTEND",
+      category: "FRONTEND",
     },
     {
       id: 1,
-      name: "Typescript",
-      category: ">_ FRONTEND",
+      name: "TypeScript",
+      category: "FRONTEND",
     },
     {
       id: 2,
-      name: "Next.JS",
-      category: ">_ FRONTEND",
+      name: "Vue.js",
+      category: "FRONTEND",
     },
     {
       id: 3,
       name: "Tailwind CSS",
-      category: ">_ FRONTEND",
+      category: "FRONTEND",
     },
     {
       id: 4,
-      name: "NodeJS",
-      category: ">_ BACKEND",
+      name: "Node.js",
+      category: "BACKEND",
     },
     {
-      id: 4,
-      name: "NodeJS",
-      category: ">_ BACKEND",
+      id: 5,
+      name: "Express.js",
+      category: "BACKEND",
     },
     {
-      id: 4,
-      name: "NodeJS",
-      category: ">_ BACKEND",
+      id: 6,
+      name: "MongoDB",
+      category: "DATABASE",
     },
     {
-      id: 4,
-      name: "NodeJS",
-      category: ">_ BACKEND",
+      id: 7,
+      name: "Git",
+      category: "TOOLS",
+    },
+    {
+      id: 8,
+      name: "Docker",
+      category: "TOOLS",
+    },
+    {
+      id: 9,
+      name: "Figma",
+      category: "TOOLS",
+    },
+    {
+      id: 10,
+      name: "MySQL",
+      category: "DATABASE",
+    },
+    {
+      id: 11,
+      name: "Oracle",
+      category: "ORACLE",
     },
   ];
 
-  const buttonStyle = `flex items-center gap-2 px-8 py-4 border-2 
-    font-semibold`;
+  const activeCategory =
+    tabs.find((tab) => tab.id === activeTab)?.category || "ALL";
+
+  const filteredSkills = useMemo(() => {
+    if (activeCategory === "ALL") return skillList;
+
+    return skillList.filter(
+      (skill) => skill.category === activeCategory
+    );
+  }, [activeCategory]);
+
+  const buttonStyle = `
+    flex items-center gap-2 px-8 py-4 border-2 font-semibold cursor-pointer
+  `;
 
   return (
     <div className="w-screen relative py-24" id="skills">
@@ -101,24 +141,25 @@ const TechStack = () => {
           Tools and technologies I use to build my products
         </span>
 
+        {/* Tabs */}
         <div className="grid grid-cols-2 md:flex gap-3 md:gap-4 font-orbitron mt-8 md:mt-12">
           {tabs.map((item) => (
             <button
               key={item.id}
-              onClick={() => setIsActive(item.id)}
+              onClick={() => setActiveTab(item.id)}
               className={`
-        ${buttonStyle}
-        flex-1 sm:flex-none
-        min-w-[140px]
-        justify-center
-        px-4 py-3
-        text-sm md:text-base
-        ${
-          activeTab === item.id
-            ? "border-accent bg-accent/20 text-accent shadow-[0_0_20px_rgba(0,255,255,0.4)]"
-            : "hover:border-primary transition hover:scale-105 text-muted-foreground"
-        }
-      `}
+                ${buttonStyle}
+                flex-1 sm:flex-none
+                min-w-[140px]
+                justify-center
+                px-4 py-3
+                text-sm md:text-base
+                ${
+                  activeTab === item.id
+                    ? "border-accent bg-accent/20 text-accent shadow-[0_0_20px_rgba(0,255,255,0.4)]"
+                    : "hover:border-primary transition hover:scale-105 text-muted-foreground"
+                }
+              `}
             >
               {item.icon}
               <span>{item.text}</span>
@@ -126,16 +167,28 @@ const TechStack = () => {
           ))}
         </div>
 
+        {/* Skills */}
         <div className="w-full max-w-[1100px] flex justify-center mt-12 px-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full">
-            {skillList.map((item) => (
-              <SkillCard
-                key={item.name}
-                category={item.category}
-                text={item.name}
-              />
+          <motion.div
+            layout
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 w-full"
+          >
+            {filteredSkills.map((item) => (
+              <motion.div
+                key={item.id}
+                layout
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              >
+                <SkillCard
+                  category={`>_ ${item.category}`}
+                  text={item.name}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         <div className="w-full max-w-[1100px] flex flex-col lg:flex-row mt-12 gap-6 px-4">

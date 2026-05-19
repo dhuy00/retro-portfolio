@@ -2,30 +2,26 @@ import React from "react";
 import { FaBook } from "react-icons/fa6";
 
 const SoftSkill = () => {
-  const certifications = [
+  const softSkills = [
     {
       id: 0,
       name: "Problem Solving",
     },
     {
       id: 1,
-      name: "Team Leadership",
+      name: "Communication",
     },
     {
       id: 2,
-      name: "Code Review",
+      name: "Adaptability",
     },
     {
       id: 3,
-      name: "Technical Writing",
+      name: "Team Collaboration",
     },
     {
       id: 4,
-      name: "Mentoring",
-    },
-    {
-      id: 5,
-      name: "Agile/Scrum",
+      name: "Continuous Learning",
     },
   ];
 
@@ -40,7 +36,7 @@ const SoftSkill = () => {
       </div>
 
       <div className="flex flex-wrap gap-3 sm:gap-4 mt-5">
-        {certifications.map((item) => (
+        {softSkills.map((item) => (
           <div
             key={item.id}
             className="border-2 border-accent/50 px-3 sm:px-4 py-2 sm:py-2.5 font-orbitron text-[11px] sm:text-[12px] text-foreground hover:border-accent hover:bg-accent/10 transition-all duration-300 break-words"

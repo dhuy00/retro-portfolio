@@ -3,15 +3,15 @@ import React from "react";
 const ExperienceCard = () => {
   const experiences = {
     id: 0,
-    company: "TechCorp Inc",
-    role: "Senior Full-Stack Engineer",
-    time: "2022 - Present",
+    company: "Lampart Co., Ltd.",
+    role: "Fresher Full-Stack Developer",
+    time: "2025 - Present",
     detail: [
-      "Led development of real-time analytics platform serving 100K+ users",
-      "Reduced API response time by 60% through optimization",
-      "Mentored 5 junior developers and established code review practices",
+      "Developed responsive frontend interfaces with Vue.js and integrated RESTful APIs built with Laravel",
+      "Maintained and enhanced enterprise management modules including attendance, employee management, and room booking",
+      "Participated in developing and maintaining a real-time internal chat application",
     ],
-    techStack: ["React", "Node.js", "PostgreSQL", "AWS"],
+    techStack: ["Vue.js", "Laravel", "MariaDB", "PHP", "Socket"],
   };
 
   return (

@@ -41,13 +41,15 @@ const ProjectCard = ({ project, setSelectedProject }) => {
         <div className="flex xs:flex-row gap-2 font-orbitron w-full sm:w-auto">
           <button className="text-accent border-2 border-accent/50 px-6 sm:px-8 py-2 sm:py-1.5 
           text-xs sm:text-sm font-medium hover:scale-105 transition hover:bg-accent/10 
-          hover:border-accent w-full sm:w-auto"
+          hover:border-accent w-full sm:w-auto cursor-pointer"
           onClick={() => setSelectedProject(project.id)}>
             DETAIL
           </button>
 
-          <button className="text-primary border-2 border-primary/50 px-6 sm:px-8 py-2 sm:py-1.5 text-xs sm:text-sm font-medium hover:scale-105 transition hover:bg-primary/10 hover:border-primary w-full sm:w-auto">
-            LIVE
+          <button className="text-primary border-2 border-primary/50 px-6 sm:px-8 py-2 sm:py-1.5 text-xs 
+          sm:text-sm font-medium hover:scale-105 transition hover:bg-primary/10 hover:border-primary
+           w-full sm:w-auto cursor-pointer">
+            SOURCE
           </button>
         </div>
 

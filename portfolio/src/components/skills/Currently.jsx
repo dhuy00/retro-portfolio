@@ -4,11 +4,11 @@ const Currently = () => {
   const techstacks = [
     {
       id: 0,
-      name: "Rust",
+      name: "Java",
     },
     {
       id: 1,
-      name: "WebAssembly",
+      name: "AWS",
     },
     {
       id: 2,
@@ -16,7 +16,7 @@ const Currently = () => {
     },
     {
       id: 3,
-      name: "Kubernetes",
+      name: "UI/UX Principles",
     },
   ];
 

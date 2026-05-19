@@ -20,7 +20,7 @@ const Education = () => {
           <div className="flex flex-col gap-1">
             <h3 className="font-press-start text-xs sm:text-sm md:text-base text-white 
             leading-relaxed">
-              B.S. Computer Science
+              Bachelor of Information Technology
             </h3>
 
             <span className="text-accent text-sm sm:text-base">
@@ -28,24 +28,6 @@ const Education = () => {
             </span>
 
             <span className="text-xs sm:text-sm">2021 - 2025</span>
-          </div>
-        </div>
-
-        {/* Details */}
-        <div className="flex flex-col gap-3 text-sm sm:text-base">
-          <div className="flex gap-3 items-start">
-            <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-            <span>Graduated with Honors (3.8 GPA)</span>
-          </div>
-
-          <div className="flex gap-3 items-start">
-            <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-            <span>Specialized in Software Engineering</span>
-          </div>
-
-          <div className="flex gap-3 items-start">
-            <span className="w-2 h-2 rounded-full bg-accent mt-2 shrink-0"></span>
-            <span>Active member of programming club</span>
           </div>
         </div>
       </div>

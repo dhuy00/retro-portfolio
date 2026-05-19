@@ -23,31 +23,31 @@ const Works = () => {
     },
     {
       id: 2,
-      text: "MOBILE",
+      text: "DESKTOP APP",
     },
     {
       id: 3,
-      text: "OPEN SOURCE",
+      text: "DATA",
     },
   ];
 
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "Shopee Clone",
       description:
         "Full-stack e-commerce solution with real-time inventory management",
       category: "WEB",
       imageUrl:
         "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200&auto=format&fit=crop",
       longDescription:
-        "A modern e-commerce platform featuring authentication, payments, inventory management, analytics dashboard, and order tracking.",
-      tech: ["Next.js", "PostgreSQL", "Stripe", "TailwindCSS"],
+        "An e-commerce application used by sellers and customers to browse products, place orders, and manage accounts, supporting smooth online buying and selling operations",
+      tech: ["Express.js", "MySQL", "ReactJS", "Postgre"],
       features: [
-        "Secure authentication",
-        "Real-time inventory",
-        "Stripe payment integration",
-        "Admin dashboard",
+        "Customer and shop management with role-based access control.",
+        "Product management with categories, inventory, pricing, and product variants.",
+        "Shopping cart and order processing workflow for customers.",
+        "Review and rating system for products and shops.",
       ],
       stats: {
         users: "10K+",
@@ -57,22 +57,93 @@ const Works = () => {
       githubUrl: "https://github.com/yourusername/ecommerce",
       liveUrl: "https://ecommerce-demo.com",
     },
-
     {
       id: 2,
       title: "Task Management App",
-      description: "Collaborative productivity app for teams and freelancers",
+      description: "Project management system with task tracking, issue management, and team collaboration features",
       category: "WEB",
       imageUrl:
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
       longDescription:
-        "Task and project management application with drag-and-drop support, team collaboration, and analytics.",
-      tech: ["React", "Node.js", "MongoDB"],
+        "A collaborative task management platform inspired by Redmine, built to help teams organize projects, track tasks and issues, and manage daily workflows more efficiently. The application provides features for task assignment, progress tracking, team collaboration, and project management in a simple and user-friendly interface.",
+      tech: ["React", "Node.js", "Postgre"],
       features: [
-        "Kanban board",
-        "Team collaboration",
-        "Task analytics",
-        "Notifications",
+        "Task and issue tracking with status management",
+        "Project and team collaboration workspace",
+        "Role-based access control for members and managers",
+        "Dashboard for monitoring project progress and activity",
+      ],
+      stats: {
+        users: "5K+",
+        uptime: "99.8%",
+        performance: "92 Lighthouse",
+      },
+      githubUrl: "https://github.com/yourusername/task-app",
+      liveUrl: "https://task-demo.com",
+    },
+    {
+      id: 3,
+      title: "University Management App",
+      description: "A Windows Forms application for managing students, staff, and courses with role-based access control and auditing.",
+      category: "WEB",
+      imageUrl:
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        "A Windows Forms university management application developed to support the administration of students, staff, and courses within an educational environment. The system includes role-based access control and auditing mechanisms to ensure secure data management and user accountability. Built with C# and Oracle, the application focuses on managing academic information efficiently while applying database security models such as DAC, RBAC, and OLS for authentication and authorization.",
+      tech: ["C#", "Oracle"],
+      features: [
+        "Authentication and authorization using DAC, RBAC, and OLS",
+        "Student, staff, and course management system",
+        "Audit logging to track user activities and data changes",
+        "Role-based dashboard and permission control for different user types",
+      ],
+      stats: {
+        users: "5K+",
+        uptime: "99.8%",
+        performance: "92 Lighthouse",
+      },
+      githubUrl: "https://github.com/yourusername/task-app",
+      liveUrl: "https://task-demo.com",
+    },
+    {
+      id: 4,
+      title: "Employee Management Project",
+      description: "A web application for managing employee records, roles, and access with role-based control, attendance tracking, and payroll management.",
+      category: "WEB",
+      imageUrl:
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        "A web-based enterprise management system designed to streamline employee operations and internal workflows. The application supports employee management, attendance tracking, payroll processing, and role-based access control to help organizations manage daily activities more efficiently. Built with ReactJS, Spring Boot, and PostgreSQL, the system focuses on providing a responsive user experience and scalable backend architecture for internal business management.",
+      tech: ["ReactJS", "Spring Boot", "PostgreSQL", "Redux Toolkit"],
+      features: [
+        "Employee and department management system",
+        "Attendance tracking and payroll management",
+        "Role-based access control and permission handling",
+        "Internal request and workflow management for employees",
+      ],
+      stats: {
+        users: "5K+",
+        uptime: "99.8%",
+        performance: "92 Lighthouse",
+      },
+      githubUrl: "https://github.com/yourusername/task-app",
+      liveUrl: "https://task-demo.com",
+    },
+    {
+      id: 5,
+      title: "GeoMart Analytics Warehouse",
+      description: "A data warehouse and OLAP analytics project that integrates multiple data sources into a centralized DW, enabling multidimensional analysis, reporting, and business insights through Cube design and visual dashboards..",
+      category: "WEB",
+      imageUrl:
+        "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
+      longDescription:
+        `GeoMart Analytics Warehouse is a Business Intelligence project that uses ETL processes to integrate data into a centralized Data Warehouse, supporting OLAP analysis, multidimensional reporting, and interactive dashboards for business insights.`,
+      tech: ["SQL Server", "SSIS", "SSAS"],
+      features: [
+        "Extracts, transforms, cleans, and loads data from multiple sources into a centralized Data Warehouse.",
+        "Designs Geography, Date, and other dimensions with hierarchical structures for efficient OLAP analysis.",
+        "Supports multidimensional analysis with drill-down, roll-up, slicing, and dicing capabilities.",
+        "Generates analytical dashboards and visual reports to provide actionable business insights.",
       ],
       stats: {
         users: "5K+",
@@ -91,7 +162,7 @@ const Works = () => {
   }
 
   const buttonStyle = `flex items-center gap-2 px-6 py-2 border-2 border-muted-foreground/30
-    text-muted-foreground font-semibold`;
+    text-muted-foreground font-semibold cursor-pointer`;
 
   return (
     <div className="w-screen relative py-24" id="work">
@@ -102,7 +173,7 @@ const Works = () => {
           MY <span className="text-primary">WORK</span>
         </h1>
         <span className="font-orbitron text-muted-foreground">
-          Featured projects that showcase my expertise
+          Things I’ve built while learning and growing as a developer
         </span>
 
         {/* Tabs */}

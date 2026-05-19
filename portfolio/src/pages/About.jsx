@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { FaCode, FaBolt, FaTrophy, FaUsers } from "react-icons/fa";
+import avatar from '../assets/avatar.jpg'
 
 const About = () => {
   return (
@@ -108,12 +109,14 @@ const About = () => {
                 {/* Image */}
                 <div className="relative border-2 border-accent overflow-hidden">
                   <img
-                    src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=500&h=600&fit=crop"
+                    src={avatar}
                     alt="Profile"
                     className="
                       w-full
                       aspect-[3/4]
                       object-cover
+                      scale-150
+                      -translate-y-12
                     "
                   />
 
@@ -215,7 +218,7 @@ const About = () => {
             "
           >
             <div className="space-y-6">
-              <div className="w-[750px]">
+              <div className="w-[750px] opacity-90">
                 <h3
                   className="
                     text-primary
@@ -226,7 +229,7 @@ const About = () => {
                     fontFamily: "'Press Start 2P', monospace",
                   }}
                 >
-                  PLAYER ONE
+                  MY STORY SO FAR
                 </h3>
 
                 <p
@@ -235,16 +238,16 @@ const About = () => {
                     leading-relaxed
                     mb-5
                     text-sm sm:text-base
+                    tracking-wide
                   "
                   style={{
                     fontFamily: "'Orbitron', sans-serif",
                   }}
                 >
-                  Full-stack developer with{" "}
-                  <span className="text-primary">8+ years</span> of
-                  experience crafting elegant solutions to complex
-                  problems. Started coding at 14, building simple
-                  websites in my bedroom.
+                  My journey into programming started with curiosity back in high school 
+                  while learning Pascal. That curiosity eventually led me to pursue an IT 
+                  major at the University of Science, where I discovered my passion for web 
+                  development.
                 </p>
 
                 <p
@@ -252,23 +255,32 @@ const About = () => {
                     text-muted-foreground
                     leading-relaxed
                     text-sm sm:text-base
+                    tracking-wide
+                    mb-5
                   "
                   style={{
                     fontFamily: "'Orbitron', sans-serif",
                   }}
                 >
-                  Passionate about building intuitive, performant web
-                  applications that solve real problems. I believe
-                  great software is a blend of{" "}
-                  <span className="text-accent">clean code</span>,{" "}
-                  <span className="text-secondary">
-                    thoughtful design
-                  </span>
-                  , and{" "}
-                  <span className="text-primary">
-                    user empathy
-                  </span>
-                  .
+                  Since then, I’ve spent countless hours learning, experimenting, 
+                  building personal projects, and improving my skills through real-world 
+                  development experience.
+                </p>
+
+                <p
+                  className="
+                    text-muted-foreground
+                    leading-relaxed
+                    text-sm sm:text-base
+                    tracking-wide
+                  "
+                  style={{
+                    fontFamily: "'Orbitron', sans-serif",
+                  }}
+                >
+                  Over the past year, I’ve been working mainly with Vue.js and Laravel in a 
+                  professional environment, building modern web applications that are clean, 
+                  responsive, and user-focused.
                 </p>
               </div>
             </div>

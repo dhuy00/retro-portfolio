@@ -5,7 +5,7 @@ const Certification = () => {
   const certifications = [
     {
       id: 0,
-      name: "AWS Certified Developer",
+      name: "TOEIC Speaking & Writing - 320",
       year: 2025,
     },
     {

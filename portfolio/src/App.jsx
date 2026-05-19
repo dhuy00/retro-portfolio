@@ -10,6 +10,7 @@ import TechStack from './pages/TechStack'
 import Works from './pages/Works'
 import Experience from './pages/Experience'
 import Contact from './pages/Contact'
+import PersonalInfo from './components/common/PersonalInfo'
 
 function App() {
 
@@ -23,11 +24,7 @@ function App() {
        <TechStack/>
        <Works/>
        <Experience/>
-       <Contact/>
-            {/* <About/>
-      <SectionBreak/>
-      <Skills/>
-      <Projects/> */}
+      <PersonalInfo/>
     </div>
   )
 }
