@@ -15,7 +15,7 @@ import PersonalInfo from './components/common/PersonalInfo'
 function App() {
 
   return (
-    <div className=' h-screen w-screen overflow-x-hidden scroll-smooth'>
+    <div className=' h-screen w-screen overflow-x-hidden scroll-smooth tracking-wide'>
       <Background/>
       {/* <CustomCursor/> */}
        <Navigation/>

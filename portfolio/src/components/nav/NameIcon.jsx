@@ -5,7 +5,7 @@ const NameIcon = ({ setActiveTab }) => {
   return (
   <a href="#home" onClick={() => setActiveTab(1)} className="flex gap-2 items-center">
     <LuGamepad2 className="text-3xl text-primary"/>
-    <span className="font-orbitron font-bold tracking-wider">DUCHUY.DEV</span>
+    <span className="font-orbitron font-bold tracking-wider">DUCHUY</span>
   </a>
   );
 };

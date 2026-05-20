@@ -54,7 +54,7 @@ const Works = () => {
         uptime: "99.9%",
         performance: "95 Lighthouse",
       },
-      githubUrl: "https://github.com/yourusername/ecommerce",
+      githubUrl: "https://github.com/dhuy00/MDM_project",
       liveUrl: "https://ecommerce-demo.com",
     },
     {
@@ -78,14 +78,14 @@ const Works = () => {
         uptime: "99.8%",
         performance: "92 Lighthouse",
       },
-      githubUrl: "https://github.com/yourusername/task-app",
+      githubUrl: "https://github.com/dhuy00/Knowly",
       liveUrl: "https://task-demo.com",
     },
     {
       id: 3,
       title: "University Management App",
       description: "A Windows Forms application for managing students, staff, and courses with role-based access control and auditing.",
-      category: "WEB",
+      category: "DESKTOP APP",
       imageUrl:
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
       longDescription:
@@ -102,7 +102,7 @@ const Works = () => {
         uptime: "99.8%",
         performance: "92 Lighthouse",
       },
-      githubUrl: "https://github.com/yourusername/task-app",
+      githubUrl: "https://github.com/dhuy00/University-Management-App",
       liveUrl: "https://task-demo.com",
     },
     {
@@ -126,14 +126,14 @@ const Works = () => {
         uptime: "99.8%",
         performance: "92 Lighthouse",
       },
-      githubUrl: "https://github.com/yourusername/task-app",
+      githubUrl: "https://gitlab.com/ZR1ck/empmanagement",
       liveUrl: "https://task-demo.com",
     },
     {
       id: 5,
       title: "GeoMart Analytics Warehouse",
       description: "A data warehouse and OLAP analytics project that integrates multiple data sources into a centralized DW, enabling multidimensional analysis, reporting, and business insights through Cube design and visual dashboards..",
-      category: "WEB",
+      category: "DATA",
       imageUrl:
         "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?q=80&w=1200&auto=format&fit=crop",
       longDescription:
@@ -150,7 +150,7 @@ const Works = () => {
         uptime: "99.8%",
         performance: "92 Lighthouse",
       },
-      githubUrl: "https://github.com/yourusername/task-app",
+      githubUrl: "https://github.com/dhuy00/project_BI",
       liveUrl: "https://task-demo.com",
     },
   ];
@@ -164,13 +164,18 @@ const Works = () => {
   const buttonStyle = `flex items-center gap-2 px-6 py-2 border-2 border-muted-foreground/30
     text-muted-foreground font-semibold cursor-pointer`;
 
+  const filteredProjects =
+  activeTab === 0
+    ? projects
+    : projects.filter((project) => project.category === tabs[activeTab].text);
+
   return (
     <div className="w-screen relative py-24" id="work">
       <div className="absolute inset-0 bg-gradient-to-b from-[#0f0820] via-[#1a0f2e] to-[#0f0820]" />
 
       <div className="relative flex flex-col items-center">
-        <h1 className="font-press-start text-[3rem] text-accent">
-          MY <span className="text-primary">WORK</span>
+        <h1 className="font-press-start text-[3rem] text-accent tracking-normal">
+          MY <span className="text-primary">PROJECTS</span>
         </h1>
         <span className="font-orbitron text-muted-foreground">
           Things I’ve built while learning and growing as a developer
@@ -195,7 +200,7 @@ const Works = () => {
 
         {/* Projects */}
         <div className="grid grid-cols-2 gap-4 mt-12">
-          {projects.map((project) => (
+          {filteredProjects.map((project) => (
             <ProjectCard project={project} setSelectedProject={setSelectedProject}/>
           ))}
         </div>

@@ -190,7 +190,7 @@ export function ProjectDialog({ isOpen, onClose, project }) {
               "
             >
               <a
-                href="https://www.youtube.com/watch?v=rCKzH0VPVMM&list=RDGMyF41IxReo&index=3"
+                href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="

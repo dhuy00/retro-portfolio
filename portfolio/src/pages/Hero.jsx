@@ -44,11 +44,14 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center lg:justify-start">
-            <button className="flex items-center justify-center text-accent gap-2 border-2 border-accent
-             px-8 py-3 hover:bg-accent/10 transition hover:scale-105 text-sm sm:text-base cursor-pointer">
+            <a
+              href="/cv.pdf"
+              download
+              className="flex items-center justify-center text-accent gap-2 border-2 border-accent px-8 py-3 hover:bg-accent/10 transition hover:scale-105 text-sm sm:text-base cursor-pointer"
+            >
               <MdOutlineFileDownload className="text-xl sm:text-2xl" />
               <span>RESUME</span>
-            </button>
+            </a>
           </div>
         </div>
 

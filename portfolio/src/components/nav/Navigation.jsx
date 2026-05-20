@@ -20,7 +20,7 @@ const Navigation = () => {
     },
     {
       id: 4,
-      text: "Work",
+      text: "PROJECTS",
       link: "#work",
     },
     {

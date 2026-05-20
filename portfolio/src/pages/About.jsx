@@ -280,7 +280,8 @@ const About = () => {
                 >
                   Over the past year, I’ve been working mainly with Vue.js and Laravel in a 
                   professional environment, building modern web applications that are clean, 
-                  responsive, and user-focused.
+                  responsive, and user-focused. I’m always looking to improve my skills, 
+                  explore new technologies, and create products that provide real value to users.
                 </p>
               </div>
             </div>

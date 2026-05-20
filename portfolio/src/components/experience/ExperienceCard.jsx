@@ -11,7 +11,7 @@ const ExperienceCard = () => {
       "Maintained and enhanced enterprise management modules including attendance, employee management, and room booking",
       "Participated in developing and maintaining a real-time internal chat application",
     ],
-    techStack: ["Vue.js", "Laravel", "MariaDB", "PHP", "Socket"],
+    techStack: ["Vue.js", "Laravel", "MariaDB", "PHP", "Socket", "Typescript"],
   };
 
   return (

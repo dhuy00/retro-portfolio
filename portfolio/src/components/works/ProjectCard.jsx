@@ -46,11 +46,11 @@ const ProjectCard = ({ project, setSelectedProject }) => {
             DETAIL
           </button>
 
-          <button className="text-primary border-2 border-primary/50 px-6 sm:px-8 py-2 sm:py-1.5 text-xs 
+          <a href={project.githubUrl} target="_blank" className="text-primary border-2 border-primary/50 px-6 sm:px-8 py-2 sm:py-1.5 text-xs 
           sm:text-sm font-medium hover:scale-105 transition hover:bg-primary/10 hover:border-primary
            w-full sm:w-auto cursor-pointer">
             SOURCE
-          </button>
+          </a>
         </div>
 
         <FiGithub className="text-[18px] sm:text-[20px] text-primary hover:text-accent transition self-end sm:self-auto cursor-pointer" />
