@@ -4,11 +4,9 @@ import {
   ArrowRight,
   BriefcaseBusiness,
   Check,
-  Code2,
   ExternalLink,
   GraduationCap,
   Menu,
-  Sparkles,
   X,
 } from "lucide-react";
 import { FiGithub } from "react-icons/fi";
@@ -136,28 +134,72 @@ const stack = [
   },
 ];
 
+const navigationLinks = [
+  ["About", "about"],
+  ["Stack", "stack"],
+  ["Work", "work"],
+  ["Experience", "experience"],
+];
+
 function Navigation() {
   const [open, setOpen] = useState(false);
-  const links = [
-    ["About", "#about"],
-    ["Stack", "#stack"],
-    ["Work", "#work"],
-    ["Experience", "#experience"],
-  ];
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sectionIds = ["home", ...navigationLinks.map(([, id]) => id), "contact"];
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
+        }
+      },
+      {
+        rootMargin: "-18% 0px -68% 0px",
+        threshold: [0, 0.1, 0.25],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="site-header">
-      <a className="brand" href="#home" aria-label="Go to home">
+      <a
+        className={activeSection === "home" ? "brand is-active" : "brand"}
+        href="#home"
+        aria-label="Go to home"
+        aria-current={activeSection === "home" ? "page" : undefined}
+      >
         <span>DH</span>
         <span className="brand-dot" />
       </a>
       <nav className={open ? "nav-links is-open" : "nav-links"}>
-        {links.map(([label, href]) => (
-          <a key={href} href={href} onClick={() => setOpen(false)}>
+        {navigationLinks.map(([label, id]) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            className={activeSection === id ? "is-active" : ""}
+            aria-current={activeSection === id ? "page" : undefined}
+            onClick={() => setOpen(false)}
+          >
             {label}
           </a>
         ))}
-        <a className="nav-cta" href="#contact" onClick={() => setOpen(false)}>
+        <a
+          className={activeSection === "contact" ? "nav-cta is-active" : "nav-cta"}
+          href="#contact"
+          aria-current={activeSection === "contact" ? "page" : undefined}
+          onClick={() => setOpen(false)}
+        >
           Let&apos;s talk <ArrowRight size={15} />
         </a>
       </nav>
@@ -212,45 +254,44 @@ function Hero() {
           </div>
         </div>
 
-        <div className="developer-console reveal reveal-delay" aria-label="Developer profile card">
-          <div className="console-chrome">
-            <span />
-            <span />
-            <span />
-            <code>developer.ts</code>
+        <div className="build-note reveal reveal-delay" aria-label="How I approach product development">
+          <div className="note-binding" aria-hidden="true">
+            <span /><span /><span /><span />
           </div>
-          <div className="console-body">
-            <div className="code-line">
-              <span className="line-number">01</span>
-              <code><b>const</b> developer = &#123;</code>
+          <div className="note-header">
+            <span>Field notes / 001</span>
+            <span>HCM · 2026</span>
+          </div>
+          <p className="note-kicker">How I work</p>
+          <h2>From rough idea to a product people can use.</h2>
+          <div className="process-list">
+            <div className="process-item">
+              <span className="process-number">01</span>
+              <div>
+                <strong>Discover</strong>
+                <p>Understand the real problem before choosing the tools.</p>
+              </div>
             </div>
-            <div className="code-line indent">
-              <span className="line-number">02</span>
-              <code>name: <em>&quot;Võ Đức Huy&quot;</em>,</code>
+            <div className="process-item">
+              <span className="process-number">02</span>
+              <div>
+                <strong>Build</strong>
+                <p>Connect thoughtful interfaces to dependable systems.</p>
+              </div>
             </div>
-            <div className="code-line indent">
-              <span className="line-number">03</span>
-              <code>role: <em>&quot;Full-Stack Developer&quot;</em>,</code>
-            </div>
-            <div className="code-line indent">
-              <span className="line-number">04</span>
-              <code>focus: [<em>&quot;clean UI&quot;</em>, <em>&quot;solid APIs&quot;</em>],</code>
-            </div>
-            <div className="code-line indent">
-              <span className="line-number">05</span>
-              <code>curious: <b>true</b>,</code>
-            </div>
-            <div className="code-line">
-              <span className="line-number">06</span>
-              <code>&#125;;</code>
+            <div className="process-item">
+              <span className="process-number">03</span>
+              <div>
+                <strong>Refine</strong>
+                <p>Test the edges, remove friction, then ship with care.</p>
+              </div>
             </div>
           </div>
-          <div className="console-status">
-            <span><Check size={14} /> Ready to build</span>
-            <span>2026</span>
+          <div className="note-footer">
+            <span>Full-stack execution</span>
+            <span className="note-signature">Huy.</span>
           </div>
-          <div className="sticker sticker-code"><Code2 /></div>
-          <div className="sticker sticker-spark"><Sparkles /></div>
+          <div className="note-stamp" aria-hidden="true">BUILD<br />WITH<br />INTENT</div>
         </div>
       </div>
       <div className="scroll-note">
