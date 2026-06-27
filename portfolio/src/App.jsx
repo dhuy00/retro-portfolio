@@ -135,6 +135,7 @@ const stack = [
 ];
 
 const navigationLinks = [
+  ["Home", "home"],
   ["About", "about"],
   ["Stack", "stack"],
   ["Work", "work"],
@@ -146,29 +147,42 @@ function Navigation() {
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const sectionIds = ["home", ...navigationLinks.map(([, id]) => id), "contact"];
+    const sectionIds = [...navigationLinks.map(([, id]) => id), "contact"];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
+    let animationFrame;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleSection = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    const updateActiveSection = () => {
+      const probeY = window.innerHeight * 0.32;
+      const currentSection =
+        sections.find((section) => {
+          const bounds = section.getBoundingClientRect();
+          return bounds.top <= probeY && bounds.bottom > probeY;
+        }) ?? sections.at(-1);
 
-        if (visibleSection) {
-          setActiveSection(visibleSection.target.id);
-        }
-      },
-      {
-        rootMargin: "-18% 0px -68% 0px",
-        threshold: [0, 0.1, 0.25],
-      },
-    );
+      if (currentSection) {
+        setActiveSection(currentSection.id);
+      }
 
-    sections.forEach((section) => observer.observe(section));
-    return () => observer.disconnect();
+      animationFrame = undefined;
+    };
+
+    const scheduleUpdate = () => {
+      if (!animationFrame) {
+        animationFrame = window.requestAnimationFrame(updateActiveSection);
+      }
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   return (
